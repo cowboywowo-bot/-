@@ -1,0 +1,657 @@
+{
+  "$schema": "app-local-content-v1 (internal data contract; not JSON Schema URL)",
+  "metadata": {
+    "version": "1.2",
+    "tripName": "名古屋慢旅手帳",
+    "dates": {
+      "start": "2026-11-01",
+      "end": "2026-11-06"
+    },
+    "tripTimezone": "Asia/Tokyo",
+    "language": "zh-TW",
+    "currency": "JPY",
+    "source": "名古屋.pptx + user-confirmed corrections",
+    "lastReconciledOn": "2026-10-25"
+  },
+  "flights": [
+    {
+      "id": "outbound",
+      "date": "2026-11-01",
+      "flightNo": "CX530",
+      "airline": "國泰航空",
+      "from": "TPE",
+      "to": "NGO",
+      "departureLocal": "2026-11-01T12:00:00+08:00",
+      "arrivalLocal": "2026-11-01T15:35:00+09:00",
+      "source": "簡報機票截圖",
+      "status": "scheduled_reference"
+    },
+    {
+      "id": "inbound",
+      "date": "2026-11-06",
+      "flightNo": "CX531",
+      "airline": "國泰航空",
+      "from": "NGO",
+      "to": "TPE",
+      "departureLocal": "2026-11-06T16:40:00+09:00",
+      "arrivalLocal": "2026-11-06T19:10:00+08:00",
+      "source": "簡報機票截圖",
+      "status": "scheduled_reference"
+    }
+  ],
+  "accommodation": {
+    "placeId": "vessel-inn",
+    "checkInDate": "2026-11-01",
+    "checkOutDate": "2026-11-06",
+    "estimatedArrivalLocal": "2026-11-01T18:00:00+09:00",
+    "checkOutPlanLocal": "2026-11-06T10:00:00+09:00"
+  },
+  "days": [
+    {
+      "date": "2026-11-01",
+      "weekday": "日",
+      "theme": "抵達名古屋",
+      "events": [
+        {
+          "id": "d1-flight",
+          "title": "CX530 桃園機場起飛",
+          "type": "flight",
+          "time": "12:00",
+          "timeStatus": "source_flight",
+          "placeId": null,
+          "bookingStatus": "unknown"
+        },
+        {
+          "id": "d1-arrive",
+          "title": "抵達名古屋中部國際機場",
+          "type": "arrival",
+          "time": "15:35",
+          "timeStatus": "source_flight",
+          "placeId": null,
+          "bookingStatus": "unknown"
+        },
+        {
+          "id": "d1-hotel",
+          "title": "抵達飯店（預估）",
+          "type": "hotel",
+          "time": "18:00",
+          "timeStatus": "estimate",
+          "placeId": "vessel-inn",
+          "bookingStatus": "unknown",
+          "note": "不是飯店承諾的報到時間；依當天入境與交通調整"
+        },
+        {
+          "id": "d1-dinner",
+          "title": "晚餐：炸豬排 すゞ家",
+          "type": "meal",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "suzuya",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://feitravel.tw/p-5071602993/"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "weekday": "一",
+      "theme": "吉卜力公園",
+      "events": [
+        {
+          "id": "d2-warehouse",
+          "title": "吉卜力大倉庫入場",
+          "type": "attraction",
+          "time": "10:00",
+          "timeStatus": "user_confirmed",
+          "placeId": "ghibli-grand-warehouse",
+          "bookingStatus": "unknown",
+          "note": "入場日期／時間已由使用者確認；是否持有有效票券尚未提供",
+          "references": [
+            "https://ghibli-park.jp/en/"
+          ]
+        },
+        {
+          "id": "d2-park",
+          "title": "吉卜力公園參觀",
+          "type": "attraction",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "ghibli-park",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://gototravel.tw/ghibli-park-transport/"
+          ]
+        },
+        {
+          "id": "d2-dinner",
+          "title": "晚餐：Misakiraj nonbe（印度／尼泊爾咖哩）",
+          "type": "meal",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "misakiraj-nonbe",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://ameblo.jp/esthe-oyaji/image-12896338569-15573912390.html"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "weekday": "二",
+      "theme": "名古屋歷史巡禮",
+      "events": [
+        {
+          "id": "d3-castle",
+          "title": "名古屋城",
+          "type": "attraction",
+          "time": "10:00",
+          "timeStatus": "planned",
+          "placeId": "nagoya-castle",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/watch?v=3fEQftTdHEA"
+          ]
+        },
+        {
+          "id": "d3-shrine",
+          "title": "熱田神宮",
+          "type": "attraction",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "atsuta-jingu",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/shorts/IBNWpJlwwCg"
+          ]
+        },
+        {
+          "id": "d3-dinner",
+          "title": "晚餐：栄の中心で手羽先を叫ぶ ～さかてば～",
+          "type": "meal",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "sakateba",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/shorts/XmeVOxfyHvw?feature=share"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "weekday": "三",
+      "theme": "犬山文化之旅",
+      "events": [
+        {
+          "id": "d4-meiji",
+          "title": "明治村",
+          "type": "attraction",
+          "time": "09:00",
+          "timeStatus": "planned",
+          "placeId": "meiji-mura",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/watch?v=IgW0lSTMDG0"
+          ]
+        },
+        {
+          "id": "d4-castle",
+          "title": "犬山城",
+          "type": "attraction",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "inuyama-castle",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/watch?v=D5rTbfe35jI"
+          ]
+        },
+        {
+          "id": "d4-dinner",
+          "title": "晚餐：かみむら牧場 城北黒川店",
+          "type": "meal",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "kamimura-bbq",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://kamimura-bbq.com/store/nagoyakurokawa/"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "weekday": "四",
+      "theme": "大須購物與美食",
+      "events": [
+        {
+          "id": "d5-osu",
+          "title": "大須商店街與大須觀音",
+          "type": "attraction",
+          "time": "10:00",
+          "timeStatus": "planned",
+          "placeId": "osu-district",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.youtube.com/shorts/YrmuluijeqU"
+          ]
+        },
+        {
+          "id": "d5-shopping",
+          "title": "大須商店街逛街與採買",
+          "type": "shopping",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "osu-district",
+          "bookingStatus": "unknown"
+        },
+        {
+          "id": "d5-dinner",
+          "title": "晚餐：月島もんじゃ くうや",
+          "type": "meal",
+          "time": null,
+          "timeStatus": "planned",
+          "placeId": "kuya-monjayaki",
+          "bookingStatus": "unknown",
+          "references": [
+            "https://www.facebook.com/reel/464498452684251"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "weekday": "五",
+      "theme": "返回台灣",
+      "events": [
+        {
+          "id": "d6-checkout",
+          "title": "飯店退房",
+          "type": "hotel",
+          "time": "10:00",
+          "timeStatus": "user_confirmed",
+          "placeId": "vessel-inn",
+          "bookingStatus": "unknown"
+        },
+        {
+          "id": "d6-airport",
+          "title": "抵達名古屋中部國際機場",
+          "type": "arrival",
+          "time": "13:00",
+          "timeStatus": "user_confirmed",
+          "placeId": "ngo-airport",
+          "bookingStatus": "unknown",
+          "note": "13:00 是預計抵達機場，不是起飛時間"
+        },
+        {
+          "id": "d6-flight",
+          "title": "CX531 名古屋中部國際機場起飛",
+          "type": "flight",
+          "time": "16:40",
+          "timeStatus": "source_flight",
+          "placeId": "ngo-airport",
+          "bookingStatus": "unknown"
+        },
+        {
+          "id": "d6-taipei",
+          "title": "抵達台灣桃園機場",
+          "type": "arrival",
+          "time": "19:10",
+          "timeStatus": "source_flight",
+          "placeId": null,
+          "bookingStatus": "unknown"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "vessel-inn",
+      "name": "VESSEL INN SAKAE STATION",
+      "category": "hotel",
+      "address": "日本〒460-0003 Aichi, Nagoya, Naka Ward, Nishiki, 3 Chome−14−13 1F",
+      "websiteUrl": "https://www.vessel-hotel.jp/inn/sakae/",
+      "mapsUrl": "https://maps.app.goo.gl/wiskNSfCbUVPxE5x5",
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": true
+    },
+    {
+      "id": "ngo-airport",
+      "name": "名古屋中部國際機場",
+      "category": "transport",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "ghibli-park",
+      "name": "吉卜力公園",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": "https://ghibli-park.jp/en/",
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "ghibli-grand-warehouse",
+      "name": "吉卜力大倉庫",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": "https://ghibli-park.jp/en/",
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "nagoya-castle",
+      "name": "名古屋城",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "atsuta-jingu",
+      "name": "熱田神宮",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "meiji-mura",
+      "name": "明治村",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "inuyama-castle",
+      "name": "犬山城",
+      "category": "attraction",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "osu-district",
+      "name": "大須商店街／大須觀音",
+      "category": "shopping",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "suzuya",
+      "name": "すゞ家（炸豬排）",
+      "category": "food",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "misakiraj-nonbe",
+      "name": "Misakiraj nonbe",
+      "category": "food",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "sakateba",
+      "name": "栄の中心で手羽先を叫ぶ ～さかてば～",
+      "category": "food",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "kamimura-bbq",
+      "name": "幸せの焼肉食べ放題 かみむら牧場 城北黒川店",
+      "category": "food",
+      "address": null,
+      "websiteUrl": "https://kamimura-bbq.com/store/nagoyakurokawa/",
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "kuya-monjayaki",
+      "name": "月島もんじゃ くうや",
+      "category": "food",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "aichi-art-museum",
+      "name": "愛知縣美術館",
+      "category": "backup",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    },
+    {
+      "id": "toyota-art-museum",
+      "name": "豐田市美術館",
+      "category": "backup",
+      "address": null,
+      "websiteUrl": null,
+      "mapsUrl": null,
+      "latitude": null,
+      "longitude": null,
+      "verifiedLocation": false
+    }
+  ],
+  "foodCandidates": [
+    {
+      "id": "food-01",
+      "title": "味噌豬排",
+      "referenceUrl": "https://www.youtube.com/watch?v=AtaEddGrNQs",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-02",
+      "title": "味噌烏龍麵",
+      "referenceUrl": "https://www.youtube.com/watch?v=FBIDMIrU-fQ",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-03",
+      "title": "居酒屋烤串",
+      "referenceUrl": "https://www.youtube.com/watch?v=t5VC3iRHj7c",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-04",
+      "title": "海鮮居酒屋",
+      "referenceUrl": "https://www.youtube.com/watch?v=R2TmtFOUVNI",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-05",
+      "title": "鰻魚飯",
+      "referenceUrl": "https://www.youtube.com/watch?v=4Fu0AXwKsaw",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-06",
+      "title": "手羽先（炸雞翅）",
+      "referenceUrl": "https://www.youtube.com/watch?v=9C-2koiqX2o",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-07",
+      "title": "炸蝦三明治",
+      "referenceUrl": "https://www.youtube.com/watch?v=74Qn1vZOYPo",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-08",
+      "title": "和風咖啡廳",
+      "referenceUrl": "https://www.youtube.com/watch?v=gQX7ePzTPFA",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-09",
+      "title": "熱壓吐司",
+      "referenceUrl": "https://www.youtube.com/watch?v=HvD1QMLKtE0",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-10",
+      "title": "中華拉麵（冷麵）",
+      "referenceUrl": "https://www.youtube.com/watch?v=ZeVtTXFzzCM",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-11",
+      "title": "拉麵－福",
+      "referenceUrl": "https://www.youtube.com/watch?v=UHhdXIcDZFw",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-12",
+      "title": "台灣拉麵",
+      "referenceUrl": "https://www.youtube.com/watch?v=4VB8Ca30q9E",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    },
+    {
+      "id": "food-13",
+      "title": "雞蛋沾麵",
+      "referenceUrl": "https://www.youtube.com/watch?v=VKsMrmxgtiI",
+      "kind": "dish_or_category_not_verified_shop",
+      "scheduled": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "immigration-qr-guide",
+      "title": "入境 QR Code 申請教學（影片）",
+      "url": "https://www.youtube.com/watch?v=89b227fKTsw",
+      "kind": "video"
+    },
+    {
+      "id": "immigration-process",
+      "title": "通關流程（影片）",
+      "url": "https://www.youtube.com/watch?v=x7Lrh-kK-88",
+      "kind": "video"
+    },
+    {
+      "id": "ghibli-transport",
+      "title": "吉卜力公園交通參考",
+      "url": "https://gototravel.tw/ghibli-park-transport/",
+      "kind": "article"
+    },
+    {
+      "id": "ghibli-official",
+      "title": "吉卜力公園官網",
+      "url": "https://ghibli-park.jp/en/",
+      "kind": "official"
+    },
+    {
+      "id": "ghibli-purchase-video",
+      "title": "吉卜力公園購票參考影片",
+      "url": "https://www.youtube.com/watch?v=8oldxRl6cQA",
+      "kind": "video"
+    },
+    {
+      "id": "nagoya-castle-intro",
+      "title": "名古屋城參考文章",
+      "url": "https://www.gltjp.com/zh-hant/article/item/20335/",
+      "kind": "article"
+    },
+    {
+      "id": "inuyama-castle-intro",
+      "title": "犬山城參考文章",
+      "url": "https://tw.wamazing.com/media/article/a-381/",
+      "kind": "article"
+    },
+    {
+      "id": "meiji-village-video",
+      "title": "明治村參考影片",
+      "url": "https://www.youtube.com/watch?v=IgW0lSTMDG0",
+      "kind": "video"
+    },
+    {
+      "id": "aichi-museum-video",
+      "title": "愛知縣美術館參考影片",
+      "url": "https://www.youtube.com/watch?v=VWN1cmwksgs",
+      "kind": "video"
+    },
+    {
+      "id": "toyota-museum-video",
+      "title": "豐田市美術館參考影片",
+      "url": "https://www.youtube.com/watch?v=VcX2ul8fN6M",
+      "kind": "video"
+    }
+  ],
+  "flags": {
+    "ghibliAdmissionDateTimeConfirmedByUser": true,
+    "ghibliTicketPurchaseConfirmed": false,
+    "restaurantReservationsConfirmed": false,
+    "flightLiveStatusAvailable": false,
+    "mapCoordinatesEnriched": false
+  },
+  "privacy": {
+    "passportNumbersInSeed": false,
+    "privateQrCodesInSeed": false,
+    "bookingIdsInSeed": false
+  }
+}
