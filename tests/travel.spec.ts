@@ -165,9 +165,11 @@ test("favorites and event completion persist through reload and remain independe
     card.getByRole("checkbox", { name: "完成名古屋城", exact: true }),
   ).toBeChecked();
   await page.goto("/favorites");
+  await page.getByRole("button", { name: /口袋地點/ }).click();
   await expect(page.locator(".place-card")).toContainText("名古屋城");
   await page.evaluate(() => localStorage.clear());
   await page.reload();
+  await page.getByRole("button", { name: /口袋地點/ }).click();
   await expect(page.getByText("收藏，從一個小心動開始")).toBeVisible();
 });
 
@@ -273,6 +275,7 @@ test("corrupt browser state safely falls back and inaccessible storage is disclo
   await page.goto("/trip");
   await expect(page.locator(".checklist-row")).toHaveCount(6);
   await page.goto("/favorites");
+  await page.getByRole("button", { name: /口袋地點/ }).click();
   await expect(page.getByText("收藏，從一個小心動開始")).toBeVisible();
   await page.addInitScript(() => {
     Object.defineProperty(window, "localStorage", {
@@ -294,14 +297,12 @@ test("reference links and website sharing use safe, working controls", async ({
   await expect(page.locator(".resource-link")).toHaveCount(
     seed.resources.length,
   );
-  const links = await page
-    .locator('a[target="_blank"]')
-    .evaluateAll((els) =>
-      els.map((el) => ({
-        href: (el as HTMLAnchorElement).href,
-        rel: (el as HTMLAnchorElement).rel,
-      })),
-    );
+  const links = await page.locator('a[target="_blank"]').evaluateAll((els) =>
+    els.map((el) => ({
+      href: (el as HTMLAnchorElement).href,
+      rel: (el as HTMLAnchorElement).rel,
+    })),
+  );
   for (const link of links) {
     expect(link.href.startsWith("https://")).toBeTruthy();
     expect(link.rel).toContain("noopener");
@@ -419,13 +420,19 @@ test("primary pages meet WCAG AA automated accessibility checks including contra
   }
 });
 
-test("food categories and desktop layout keep readable contrast", async ({ page }) => {
-  await page.goto('/food');
-  await page.getByRole('button', { name: '料理種類', exact: true }).click();
-  let results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+test("food categories and desktop layout keep readable contrast", async ({
+  page,
+}) => {
+  await page.goto("/food");
+  await page.getByRole("button", { name: "料理種類", exact: true }).click();
+  let results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
   expect(results.violations).toEqual([]);
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto('/');
-  results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+  await page.goto("/");
+  results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
   expect(results.violations).toEqual([]);
 });

@@ -74,6 +74,9 @@ import {
 } from "./lib";
 import Landscape from "./Landscape";
 import heroImage from "./assets/nagoya-people.png";
+import PhotoJournal from "./PhotoJournal";
+import { usePhotoJournal } from "./photo-journal";
+import type { PhotoJournalState } from "./photo-journal";
 import "./styles.css";
 
 const defaultChecklist: CheckItem[] = [
@@ -140,12 +143,14 @@ interface AppState {
   toggleProgress: (id: string) => void;
   notify: (message: string) => void;
   storageAvailable: boolean;
+  journal: PhotoJournalState;
 }
 const Context = createContext<AppState>(null!);
 const useApp = () => useContext(Context);
 const EMPTY_LIST: string[] = [];
 const EMPTY_NOTES: Record<string, string> = {};
 function Provider({ children }: { children: ReactNode }) {
+  const journal = usePhotoJournal();
   const [favorites, setFavorites, a] = useStored(
     "favorites",
     EMPTY_LIST,
@@ -203,6 +208,7 @@ function Provider({ children }: { children: ReactNode }) {
         toggleProgress,
         notify,
         storageAvailable: a && b && c && d,
+        journal,
       }}
     >
       {children}
@@ -360,7 +366,7 @@ function Back({ fallback = "/itinerary" }: { fallback?: string }) {
       }
     >
       <ArrowLeft size={18} />
-      返回{location.state?.backTo ? "" : "行程"}
+      返回{location.state?.backTo ? "" : fallback === "/" ? "首頁" : fallback === "/trip" ? "旅程" : "行程"}
     </button>
   );
 }
@@ -551,7 +557,7 @@ function PlaceCard({ place, date }: { place: Place; date?: string }) {
   );
 }
 function Home() {
-  const { progress, favorites } = useApp();
+  const { progress, journal } = useApp();
   const status = journey();
   const day = status.day;
   const dayIndex = trip.days.indexOf(day) + 1;
@@ -701,7 +707,11 @@ function Home() {
           {
             icon: Heart,
             title: "我的收藏",
-            text: `${favorites.length} 個想留住的地方`,
+            text: journal.loading
+              ? "讀取照片手帳中…"
+              : journal.error
+                ? "收藏照片與 200 字小故事"
+                : `${journal.entries.length} 張照片與回憶`,
             to: "/favorites",
           },
         ].map(({ icon: Icon, title, text, to }) => (
@@ -1551,18 +1561,37 @@ function Resources() {
   );
 }
 function Favorites() {
-  const { favorites } = useApp();
+  const { favorites, journal, notify } = useApp();
+  const [view, setView] = useState<"photos" | "places">("photos");
   const places = trip.places.filter((p) => favorites.includes(p.id));
   const foods = trip.foodCandidates.filter((p) => favorites.includes(p.id));
   return (
     <>
       <Back fallback="/" />
       <PageTitle
-        eyebrow="THE LITTLE THINGS YOU LOVE"
-        title="把喜歡的，好好收藏"
-        subtitle="心動的風景和滋味，下次就不會忘記。"
+        eyebrow="YOUR LITTLE PHOTO JOURNAL"
+        title="我的照片收藏"
+        subtitle="把喜歡的畫面，和當時的心情一起留下來。"
       />
-      {places.length + foods.length > 0 ? (
+      <div className="segmented photo-journal-tabs" aria-label="收藏分類">
+        <button
+          onClick={() => setView("photos")}
+          className={view === "photos" ? "selected" : ""}
+          aria-pressed={view === "photos"}
+        >
+          照片手帳<span>{journal.entries.length}</span>
+        </button>
+        <button
+          onClick={() => setView("places")}
+          className={view === "places" ? "selected" : ""}
+          aria-pressed={view === "places"}
+        >
+          口袋地點<span>{places.length + foods.length}</span>
+        </button>
+      </div>
+      {view === "photos" ? (
+        <PhotoJournal journal={journal} notify={notify} />
+      ) : places.length + foods.length > 0 ? (
         <>
           <p className="results-label">
             {places.length + foods.length} 個口袋收藏
