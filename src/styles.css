@@ -300,12 +300,20 @@ main:focus {
   background: #d9edf0;
   isolation: isolate;
   border: 1px solid #cddfdc;
-  min-height: 386px;
+  aspect-ratio: 1;
+}
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
 }
 .hero-copy {
-  position: relative;
+  position: absolute;
+  inset: 0 0 auto;
   z-index: 2;
-  padding: 27px 24px 0;
+  padding: 18px 18px 28px;
+  background: linear-gradient(180deg, #f9f6ecf5, #f9f6eced 82%, #f9f6ec00);
 }
 .eyebrow {
   display: block;
@@ -321,11 +329,11 @@ main:focus {
   letter-spacing: 0.16em;
 }
 .hero h1 {
-  font-size: 35px;
-  line-height: 1.48;
-  letter-spacing: 0.12em;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
   color: #2d5155;
-  margin: 13px 0 9px;
+  margin: 6px 0 5px;
   font-weight: 800;
 }
 .hero-copy > p {
@@ -334,15 +342,15 @@ main:focus {
   letter-spacing: 0.04em;
 }
 .hero-spark {
-  font-size: 22px;
+  font-size: 18px;
   color: #a66f3f;
   display: inline-block;
   vertical-align: top;
   margin-left: 9px;
-  padding-top: 10px;
+  padding-top: 1px;
 }
 .trip-date {
-  margin-top: 17px;
+  margin-top: 8px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -362,37 +370,6 @@ main:focus {
   width: 100%;
   height: auto;
   display: block;
-}
-.hero > .landscape {
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-  min-height: 180px;
-  object-fit: cover;
-}
-.hero-stamp {
-  position: absolute;
-  right: 20px;
-  bottom: 35px;
-  color: #fbfae6;
-  border: 1px solid #fbfae6ad;
-  outline: 1px solid #fbfae6ad;
-  outline-offset: 3px;
-  border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-  transform: rotate(-12deg);
-}
-.hero-stamp > span {
-  font-size: 9px;
-  letter-spacing: 0.04em;
 }
 .journey-status {
   display: flex;
@@ -2062,21 +2039,11 @@ dialog .tiny {
     padding: 0 30px;
     height: 88px;
   }
-  .hero {
-    min-height: 422px;
-  }
   .hero-copy {
-    padding: 31px 28px;
+    padding: 22px 24px 32px;
   }
   .hero h1 {
-    font-size: 39px;
-  }
-  .hero > .landscape {
-    min-height: 240px;
-  }
-  .hero-stamp {
-    right: 28px;
-    bottom: 47px;
+    font-size: 32px;
   }
   .section-title h2 {
     font-size: 19px;
@@ -2167,16 +2134,13 @@ dialog .tiny {
     padding-right: 16px;
   }
   .hero-copy {
-    padding: 24px 18px;
+    padding: 16px 16px 28px;
   }
   .hero h1 {
-    font-size: 32px;
+    font-size: 24px;
   }
   .hero .eyebrow {
     font-size: 7px;
-  }
-  .hero {
-    min-height: 365px;
   }
   .trip-date {
     gap: 5px;
@@ -2325,12 +2289,6 @@ dialog .tiny {
   min-height: 44px;
 }
 
-.hero-stamp {
-  color: #385d4c;
-  background: #f9f6ecdc;
-  border-color: #66836b8c;
-  outline-color: #66836b8c;
-}
 
 /* Keep the compact journal layout while making travel information easy to read. */
 .button, .page-title p, .next-stop > p, .address,
@@ -2351,4 +2309,3 @@ dialog .tiny {
 .reminder > div > strong { font-size: 14px; }
 .map-intro h2 { font-size: 16px; }
 .resource-link { font-size: 14px; }
-@media (max-width: 759px) { .hero { min-height: 340px; } }

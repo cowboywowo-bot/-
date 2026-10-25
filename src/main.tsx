@@ -73,6 +73,7 @@ import {
   trip,
 } from "./lib";
 import Landscape from "./Landscape";
+import heroImage from "./assets/nagoya-people.png";
 import "./styles.css";
 
 const defaultChecklist: CheckItem[] = [
@@ -560,12 +561,19 @@ function Home() {
   return (
     <>
       <section className="hero">
+        <img
+          className="hero-photo"
+          src={heroImage}
+          alt="兩位旅人在名古屋電視塔前比出和平手勢的旅行插畫"
+          width={1254}
+          height={1254}
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="hero-copy">
           <span className="eyebrow">A LITTLE JOURNEY, A LOT OF MEMORIES</span>
           <h1>
-            名古屋
-            <br />
-            慢旅日記<span className="hero-spark">✳</span>
+            名古屋慢旅日記<span className="hero-spark">✳</span>
           </h1>
           <p>把日子放慢，把喜歡的風景收進口袋。</p>
           <div className="trip-date">
@@ -573,12 +581,6 @@ function Home() {
             2026.11.01 — 11.06<span>6 天 5 夜</span>
           </div>
         </div>
-        <Landscape />
-        <span className="hero-stamp">
-          NAGOYA
-          <br />
-          <span>秋の小旅行</span>
-        </span>
       </section>
       <div className="journey-status">
         <span className="status-icon">

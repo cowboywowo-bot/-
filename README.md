@@ -75,4 +75,4 @@ GitHub API 操作需要環境允許 `api.github.com`，Git 推送需要此儲存
 
 此網站可公開存取，行程 JSON 屬公開網站內容，請勿加入護照號碼、票券 QR、訂房代碼或信用卡資料。網站沒有登入、追蹤程式、分析服務或後端；筆記也請避免填寫敏感個資。
 
-原創插畫位於 `src/Landscape.tsx`、`src/main.tsx` 的料理插畫及 `public/icons/`，未使用動畫角色、商標截圖或第三方旅遊照片。字體使用裝置既有字體，不需外部字體服務。
+首頁主圖使用使用者提供的 `src/assets/nagoya-people.png`，保留原始圖片內容與比例，標題放在上方天空區域。其餘原創插畫位於 `src/Landscape.tsx`、`src/main.tsx` 的料理插畫及 `public/icons/`。字體使用裝置既有字體，不需外部字體服務。
