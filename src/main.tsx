@@ -77,6 +77,9 @@ import heroImage from "./assets/nagoya-people.png";
 import PhotoJournal from "./PhotoJournal";
 import { usePhotoJournal } from "./photo-journal";
 import type { PhotoJournalState } from "./photo-journal";
+import CouponsPage from "./CouponsPage";
+import { useCoupons } from "./coupons";
+import type { CouponWallet } from "./coupons";
 import "./styles.css";
 
 const defaultChecklist: CheckItem[] = [
@@ -144,6 +147,7 @@ interface AppState {
   notify: (message: string) => void;
   storageAvailable: boolean;
   journal: PhotoJournalState;
+  coupons: CouponWallet;
 }
 const Context = createContext<AppState>(null!);
 const useApp = () => useContext(Context);
@@ -151,6 +155,7 @@ const EMPTY_LIST: string[] = [];
 const EMPTY_NOTES: Record<string, string> = {};
 function Provider({ children }: { children: ReactNode }) {
   const journal = usePhotoJournal();
+  const coupons = useCoupons();
   const [favorites, setFavorites, a] = useStored(
     "favorites",
     EMPTY_LIST,
@@ -209,6 +214,7 @@ function Provider({ children }: { children: ReactNode }) {
         notify,
         storageAvailable: a && b && c && d,
         journal,
+        coupons,
       }}
     >
       {children}
@@ -366,7 +372,14 @@ function Back({ fallback = "/itinerary" }: { fallback?: string }) {
       }
     >
       <ArrowLeft size={18} />
-      返回{location.state?.backTo ? "" : fallback === "/" ? "首頁" : fallback === "/trip" ? "旅程" : "行程"}
+      返回
+      {location.state?.backTo
+        ? ""
+        : fallback === "/"
+          ? "首頁"
+          : fallback === "/trip"
+            ? "旅程"
+            : "行程"}
     </button>
   );
 }
@@ -557,7 +570,7 @@ function PlaceCard({ place, date }: { place: Place; date?: string }) {
   );
 }
 function Home() {
-  const { progress, journal } = useApp();
+  const { progress, journal, coupons } = useApp();
   const status = journey();
   const day = status.day;
   const dayIndex = trip.days.indexOf(day) + 1;
@@ -588,6 +601,16 @@ function Home() {
           </div>
         </div>
       </section>
+      <Link to="/coupons" className="coupon-home-link">
+        <span>
+          <Ticket size={26} />
+        </span>
+        <div>
+          <strong>優惠券</strong>
+          <small>{coupons.entries.length} 張券 · 選店家、放大出示</small>
+        </div>
+        <ChevronRight size={24} />
+      </Link>
       <div className="journey-status">
         <span className="status-icon">
           <Sparkles size={20} />
@@ -1560,6 +1583,20 @@ function Resources() {
     </>
   );
 }
+function CouponRoute() {
+  const { coupons, notify } = useApp();
+  return (
+    <>
+      <Back fallback="/" />
+      <PageTitle
+        eyebrow="YOUR LITTLE COUPON WALLET"
+        title="優惠券，隨手就能用"
+        subtitle={`共 ${coupons.entries.length} 張券，選店家後開啟原圖出示。`}
+      />
+      <CouponsPage wallet={coupons} notify={notify} />
+    </>
+  );
+}
 function Favorites() {
   const { favorites, journal, notify } = useApp();
   const [view, setView] = useState<"photos" | "places">("photos");
@@ -1770,6 +1807,7 @@ function Shell() {
             "/trip": "旅程資訊",
             "/resources": "參考資料",
             "/favorites": "我的收藏",
+            "/coupons": "優惠券",
           } as Record<string, string>
         )[location.pathname] || "六日行程";
     document.title = `${prefix || "旅行手帳"} · 名古屋慢旅手帳`;
@@ -1841,6 +1879,7 @@ function Shell() {
             <Route path="/place/:id" element={<PlacePage />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/coupons" element={<CouponRoute />} />
             <Route
               path="*"
               element={

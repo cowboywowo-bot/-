@@ -1,0 +1,98 @@
+[
+  {
+    "id": "coupon-01",
+    "file": "coupon-01.jpg",
+    "sourceFile": "863177537_18151599541508202_7926926662785946468_n.jpg",
+    "width": 752,
+    "height": 1352,
+    "sha256": "b866b88882cb085ce4fc407cde16db59464ff141a493eca70d2423f011ab3847"
+  },
+  {
+    "id": "coupon-02",
+    "file": "coupon-02.jpg",
+    "sourceFile": "801962803_17984975193099934_8873865826198180321_n.jpg",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9eef347703bf8beead525390c2cf7dc4d668ef31e9f89a549302991bcf00fafa"
+  },
+  {
+    "id": "coupon-03",
+    "file": "coupon-03.jpg",
+    "sourceFile": "801326290_17984975184099934_9211454871275970044_n.jpg",
+    "width": 751,
+    "height": 1186,
+    "sha256": "858c2efba23db69ae5e2fc4b6e48d138b9b9baf62bf46ffc9b62ab48832c6632"
+  },
+  {
+    "id": "coupon-04",
+    "file": "coupon-04.jpg",
+    "sourceFile": "801755269_17984975388099934_6498467676388775831_n.jpg",
+    "width": 2299,
+    "height": 4096,
+    "sha256": "aaadc6bd10c250042548188ee528c01e8115ddcb45a799f92b64445d4bbcfb38"
+  },
+  {
+    "id": "coupon-05",
+    "file": "coupon-05.jpg",
+    "sourceFile": "801882270_17984975352099934_93681069855123017_n.jpg",
+    "width": 2918,
+    "height": 4096,
+    "sha256": "c8b1f4e0ef12c354f2db2ab39fadc1d953752cb3abfd9ad58670844fab932ef4"
+  },
+  {
+    "id": "coupon-06",
+    "file": "coupon-06.jpg",
+    "sourceFile": "802119965_17984975367099934_3096794643314295347_n.jpg",
+    "width": 1181,
+    "height": 1654,
+    "sha256": "1d7634b059fde12d08edec6a289c204a6ff99838e31e295ad9f16fbd95d82449"
+  },
+  {
+    "id": "coupon-07",
+    "file": "coupon-07.jpg",
+    "sourceFile": "858663414_17991008535099934_3672678616805947879_n.jpg",
+    "width": 1837,
+    "height": 2578,
+    "sha256": "60c14e7e94ef62733ba1413c935abbfb45ed142ef960bc95787138983adaf8f7"
+  },
+  {
+    "id": "coupon-08",
+    "file": "coupon-08.jpg",
+    "sourceFile": "863550441_18151599430508202_7679056114463501456_n.jpg",
+    "width": 1080,
+    "height": 1528,
+    "sha256": "3fcfe8d8acb8966a73dc7d8507b3169d315737d7bdbaf9a8e7bd8707668fd798"
+  },
+  {
+    "id": "coupon-09",
+    "file": "coupon-09.jpg",
+    "sourceFile": "865361253_18151599433508202_6905843446850686912_n.jpg",
+    "width": 1112,
+    "height": 1687,
+    "sha256": "b9e97b0b0398a5e95151d170076f7ae9ccf81a3c907b6e3fbbfb39ac7d99aa10"
+  },
+  {
+    "id": "coupon-10",
+    "file": "coupon-10.jpg",
+    "sourceFile": "863853561_18151599511508202_3394043515727814470_n.jpg",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "0093bb15327123edb895f1335875483fe35a297cc81048acd135d857aeb2494c"
+  },
+  {
+    "id": "coupon-11",
+    "file": "coupon-11.jpg",
+    "sourceFile": "864289358_18151599532508202_3108531291618044845_n.jpg",
+    "width": 1080,
+    "height": 3440,
+    "sha256": "459a3af4f5b9f94031363e8861cd43e4462577a7feade949b773cdb3bd375382"
+  },
+  {
+    "id": "coupon-12",
+    "file": "coupon-12.jpg",
+    "sourceFile": "867646937_18151599613508202_6844397228137130876_n.jpg",
+    "width": 1080,
+    "height": 1783,
+    "sha256": "7a026a155b60ba62fbd6d686301113d992c80021086529330d91b49cc0867f60"
+  }
+]
